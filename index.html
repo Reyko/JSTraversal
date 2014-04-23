@@ -64,28 +64,62 @@
 
         Update your onclick attribute so that we randomly display either a box, cone or sphere at a random position on the screen. Google: find random element from array javascript
       */
-
          var scene = document.getElementById("scene");
          var shape = document.createElement("shape");
          var transform = document.createElement("transform");
 
          var appearance = document.createElement("appearance");
          var material = document.createElement("material");
-         var type = document.createElement(type);
+
+         var myShape; 
+
+
+        switch(type) {
+
+           case 'box': 
+
+              console.log('box');
+              myShape = document.createElement('box');
+              break;
+
+           case 'cone': 
+
+              myShape = document.createElement('cone');
+              break;      
+
+           case 'sphere':
+
+              myShape = document.createElement('sphere');
+              break;    
+
+           default: 
+               myShape = document.createElement('cylinder');
+              console.log("This object does not exist!");
+
+         }
+
+
+
 
          shape.appendChild(appearance);
          appearance.appendChild(material);
-         shape.appendChild(type);
+         shape.appendChild(myShape);
 
          transform.appendChild(shape)
          scene.appendChild(transform);
          
          type.setAttribute("size","4,4,4");
-         transform.setAttribute("translation","3")
+         transform.setAttribute("translation","3");
+
+
+
+   
+
+
     }
 
   </script>
 
-  <button onclick="addShape('cone');">Click Me!</button>
+  <button onclick="addShape('hello');">Click Me!</button>
 </body>
 </html>
