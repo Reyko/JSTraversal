@@ -48,7 +48,7 @@
       alert("Arghhhhhhdhhhhhh!")
     }
 
-    function addShape(type){
+    function addShape(){
 
       console.log("addShape");
 
@@ -74,21 +74,30 @@
          var myShape; 
 
 
+        var type = Math.floor(Math.random()*10);
+        console.log(type);
+
+        if (type < 4) {
+          type = "foo"
+        }
+        else if (type < 7){
+          type = "bar"
+
+        }
+        else if (type < 10) {
+         type = "fuzz"
+       }
+      
         switch(type) {
 
            case 'foo': 
-
               console.log('box');
               myShape = document.createElement('box');
               break;
-
            case 'bar': 
-
               myShape = document.createElement('cone');
               break;      
-
            case 'fuzz':
-
               myShape = document.createElement('sphere');
               break;    
 
@@ -105,7 +114,7 @@
          appearance.appendChild(material);
          shape.appendChild(myShape);
 
-         transform.appendChild(shape)
+         transform.appendChild(shape);
          scene.appendChild(transform);
          
 
@@ -116,7 +125,7 @@
          var coordinates = x + y + z;
 
          console.log(coordinates);
-         myShape.setAttribute("size","4,4,4");
+         myShape.setAttribute("size","1,1,1");
          transform.setAttribute("translation",coordinates);
 
 
@@ -128,6 +137,6 @@
 
   </script>
 
-  <button onclick="addShape('fuzz')">Click Me!</button>
+  <button onclick="addShape()">Click Me!</button>
 </body>
 </html>
