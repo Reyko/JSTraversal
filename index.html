@@ -76,18 +76,18 @@
 
         switch(type) {
 
-           case 'box': 
+           case 'foo': 
 
               console.log('box');
               myShape = document.createElement('box');
               break;
 
-           case 'cone': 
+           case 'bar': 
 
               myShape = document.createElement('cone');
               break;      
 
-           case 'sphere':
+           case 'fuzz':
 
               myShape = document.createElement('sphere');
               break;    
@@ -108,8 +108,12 @@
          transform.appendChild(shape)
          scene.appendChild(transform);
          
-         type.setAttribute("size","4,4,4");
-         transform.setAttribute("translation","3");
+
+         var position = Math.floor(Math.random() * 5);
+
+
+         myShape.setAttribute("size","4,4,4");
+         transform.setAttribute("translation",position);
 
 
 
@@ -120,6 +124,6 @@
 
   </script>
 
-  <button onclick="addShape('hello');">Click Me!</button>
+  <button onclick="addShape('fuzz');">Click Me!</button>
 </body>
 </html>
