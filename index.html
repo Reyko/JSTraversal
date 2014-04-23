@@ -93,7 +93,7 @@
               break;    
 
            default: 
-               myShape = document.createElement('cylinder');
+              myShape = document.createElement('cylinder');
               console.log("This object does not exist!");
 
          }
@@ -109,11 +109,15 @@
          scene.appendChild(transform);
          
 
-         var position = Math.floor(Math.random() * 5);
+         var x = (Math.random() * 5).toString();
+         var y = (Math.random() * 5).toString();
+         var z = (Math.random() * 5).toString();
 
+         var coordinates = x + y + z;
 
+         console.log(coordinates);
          myShape.setAttribute("size","4,4,4");
-         transform.setAttribute("translation",position);
+         transform.setAttribute("translation",coordinates);
 
 
 
@@ -124,6 +128,6 @@
 
   </script>
 
-  <button onclick="addShape('fuzz');">Click Me!</button>
+  <button onclick="addShape('fuzz')">Click Me!</button>
 </body>
 </html>
