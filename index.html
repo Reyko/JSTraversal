@@ -75,17 +75,17 @@
 
          shape.appendChild(appearance);
          appearance.appendChild(material);
-         shape.appendChild(box);
+         shape.appendChild(type);
 
          transform.appendChild(shape)
          scene.appendChild(transform);
          
-         box.setAttribute("size","4,4,4");
+         type.setAttribute("size","4,4,4");
          transform.setAttribute("translation","3")
     }
 
   </script>
 
-  <button onclick="addShape();">Click Me!</button>
+  <button onclick="addShape('cone');">Click Me!</button>
 </body>
 </html>
